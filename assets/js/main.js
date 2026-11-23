@@ -3,14 +3,12 @@ const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
 
-/* Menu show */
 if (navToggle) {
   navToggle.addEventListener('click', () => {
     navMenu.classList.add('show-menu')
   })
 }
 
-/* Menu hidden */
 if (navClose) {
   navClose.addEventListener('click', () => {
     navMenu.classList.remove('show-menu')
@@ -26,19 +24,19 @@ const linkAction = () => {
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*=============== ADD SHADOW HEADER ===============*/
-const shadowHeader = () => {
+/*=============== ADD SCROLLED NAV ===============*/
+const scrollHeader = () => {
   const nav = document.getElementById('nav')
-  this.scrollY >= 50 
-    ? nav.style.boxShadow = '0 2px 16px hsla(0, 0%, 0%, 0.3)'
-    : nav.style.boxShadow = 'none'
+  this.scrollY >= 40
+    ? nav.classList.add('scrolled')
+    : nav.classList.remove('scrolled')
 }
-window.addEventListener('scroll', shadowHeader)
+window.addEventListener('scroll', scrollHeader)
 
 /*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
   const scrollUp = document.getElementById('scroll-up')
-  this.scrollY >= 350 
+  this.scrollY >= 350
     ? scrollUp.classList.add('show-scroll')
     : scrollUp.classList.remove('show-scroll')
 }
@@ -56,10 +54,12 @@ const scrollActive = () => {
           sectionId = current.getAttribute('id'),
           sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
-    if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
-      sectionsClass.classList.add('active-link')
-    } else {
-      sectionsClass.classList.remove('active-link')
+    if (sectionsClass) {
+      if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+        sectionsClass.classList.add('active-link')
+      } else {
+        sectionsClass.classList.remove('active-link')
+      }
     }
   })
 }
@@ -71,7 +71,6 @@ const sr = ScrollReveal({
   distance: '60px',
   duration: 2000,
   delay: 300,
-  // reset: true // Animations repeat
 })
 
 sr.reveal(`.home__perfil, .home__info`)
@@ -88,15 +87,12 @@ const contactForm = document.getElementById('contact-form'),
 const sendEmail = (e) => {
   e.preventDefault()
 
-  // Demo feedback (replace with EmailJS when you have keys)
   contactMessage.textContent = 'Message sent successfully ✅'
   contactMessage.classList.add('success')
   contactMessage.classList.remove('error')
 
-  // Clear form
   contactForm.reset()
 
-  // Remove message after 5 seconds
   setTimeout(() => {
     contactMessage.textContent = ''
     contactMessage.classList.remove('success')
