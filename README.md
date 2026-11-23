@@ -1,16 +1,39 @@
-# Responsive Portfolio Website Xian
-## [Watch it on youtube](https://youtu.be/vHxVWdMUYo0)
-### Responsive Portfolio Website Xian
+# Janus John C. Asuncion — Portfolio
 
-- Responsive Portfolio Website Using HTML CSS And JavaScript
-- Contains animations when scrolling.
-- Smooth scrolling in each section.
-- Contains a beautiful dark theme.
-- The color of the project can be customized.
-- Sending emails in the contact section.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
+Personal portfolio website for **Janus John C. Asuncion** (short name: **Janus**), I.T Software Engineer.
 
-💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/@Bedimcode)
+## Features
 
-![preview img](/preview.png)
+- Fully responsive (mobile-first)
+- Dark theme with customizable accent color
+- Smooth scroll & ScrollReveal animations
+- Projects, Services, Experience & Contact sections
+- Downloadable CV
+- Clean, modern UI
+
+## How to use
+
+1. Open `index.html` in a browser, or serve the folder with any static server.
+2. Replace placeholder social links, email, and project links with your real ones.
+3. Update the CV file: `assets/pdf/Janus-CV.pdf`
+4. (Optional) Change the accent color in `assets/css/styles.css` → `--hue` variable.
+
+## Customize color
+
+In `assets/css/styles.css` look for:
+
+```css
+--hue: 220; /* Blue (current) */
+```
+
+Suggested values:
+- Red: `358`
+- Purple: `265`
+- Blue: `220`
+- Pink: `330`
+- Green: `162`
+- Orange: `14`
+
+## Credits
+
+Based on the Bedimcode “Xian” portfolio template structure, fully rebranded and completed for Janus John C. Asuncion.
